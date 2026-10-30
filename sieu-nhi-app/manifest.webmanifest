@@ -1,0 +1,18 @@
+{
+  "name": "Mỗi Ngày Tốt Hơn – Thời gian biểu & Ươm mầm thói quen tích cực",
+  "short_name": "Mỗi Ngày Tốt Hơn",
+  "description": "Thời gian biểu & Ươm mầm thói quen tích cực mỗi ngày cho mọi lứa tuổi.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff5dc",
+  "theme_color": "#ffe9b8",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
+

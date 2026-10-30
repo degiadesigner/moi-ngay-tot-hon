@@ -1,0 +1,28 @@
+rules_version = '2';
+// Luật bảo mật cho Siêu Nhí Tự Lập
+// - Mỗi gia đình có một mã bí mật dài (fid) – chỉ máy đã ghép mới biết.
+// - Không ai liệt kê được danh sách gia đình.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /families/{fid} {
+      allow get, create, update: if request.auth != null && fid.size() >= 20;
+      allow list, delete: if false;
+
+      match /{sub=**} {
+        allow read, write: if request.auth != null && fid.size() >= 20;
+      }
+    }
+
+    // Mã ghép máy 6 ký tự → trỏ tới gia đình
+    match /pairs/{code} {
+      allow get: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.resource.data.fid is string
+        && request.resource.data.fid.size() >= 20;
+      allow delete: if request.auth != null;
+      allow list: if false;
+    }
+  }
+}
+

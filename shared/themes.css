@@ -1,0 +1,333 @@
+/* =========================================================
+   SIÊU NHÍ TỰ LẬP - HỆ THỐNG GIAO DIỆN & PHÔNG CHỮ THEO ĐỘ TUỔI
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Nunito:wght@500;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap');
+
+:root {
+  --font-family: 'Nunito', 'Baloo 2', cursive, sans-serif;
+  --radius-card: 24px;
+  --radius-btn: 18px;
+  --radius-badge: 999px;
+  
+  /* Màu chủ đạo mặc định (Candy) */
+  --bg-page: #fff5f8;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fff0f3;
+  --text-main: #2d3436;
+  --text-sub: #636e72;
+  --primary: #ff5277;
+  --primary-hover: #ff3360;
+  --primary-light: #ffe6ec;
+  --accent: #48cfad;
+  --accent-light: #e8faf5;
+  --warning: #f39c12;
+  --warning-light: #fef5e7;
+  --danger: #e74c3c;
+  --danger-light: #fbeae8;
+  --success: #2ecc71;
+  --success-light: #eafaf1;
+  --star-gold: #ffb300;
+  --border-color: rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 4px 12px rgba(255, 82, 119, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 10px 30px rgba(255, 107, 139, 0.12);
+  --btn-height: 56px;
+  --icon-size: 2.2rem;
+}
+
+/* ================= 1. HỆ THỐNG PHÔNG CHỮ ================= */
+[data-font="cute"] {
+  --font-family: 'Nunito', 'Baloo 2', cursive, sans-serif;
+}
+[data-font="dynamic"] {
+  --font-family: 'Quicksand', 'Be Vietnam Pro', sans-serif;
+}
+[data-font="modern"] {
+  --font-family: 'Be Vietnam Pro', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ================= 2. HỆ THỐNG MÀU THEO CHỦ ĐỀ ================= */
+/* Chủ đề 1: Kẹo Ngọt (Candy) */
+[data-theme="candy"] {
+  --bg-page: #fff5f8;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fff0f4;
+  --text-main: #2d3436;
+  --text-sub: #636e72;
+  --primary: #ff5277;
+  --primary-hover: #ff3360;
+  --primary-light: #ffe6ec;
+  --accent: #37d67a;
+  --shadow-card: 0 10px 28px rgba(255, 82, 119, 0.12);
+}
+
+/* Chủ đề 2: Vũ Trụ Hiệp Sĩ (Galaxy) */
+[data-theme="galaxy"] {
+  --bg-page: #eef2ff;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #e0e7ff;
+  --text-main: #1e1b4b;
+  --text-sub: #4338ca;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #e0e7ff;
+  --accent: #06b6d4;
+  --shadow-card: 0 10px 28px rgba(79, 70, 229, 0.15);
+}
+
+/* Chủ đề 3: Nắng Mai (Sunshine) */
+[data-theme="sunshine"] {
+  --bg-page: #fffdf0;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fef9e7;
+  --text-main: #332a15;
+  --text-sub: #7a6a43;
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-light: #fef3c7;
+  --accent: #10b981;
+  --shadow-card: 0 10px 28px rgba(245, 158, 11, 0.15);
+}
+
+/* Chủ đề 4: Rừng Xanh (Forest) */
+[data-theme="forest"] {
+  --bg-page: #f0fdf4;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #dcfce7;
+  --text-main: #064e3b;
+  --text-sub: #047857;
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --primary-light: #d1fae5;
+  --accent: #3b82f6;
+  --shadow-card: 0 10px 28px rgba(16, 185, 129, 0.15);
+}
+
+/* Chủ đề 5: Tối Giản Hiện Đại (Minimal / Clean Slate) */
+[data-theme="minimal"] {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f1f5f9;
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #dbeafe;
+  --accent: #0ea5e9;
+  --shadow-card: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Chủ đề 6: Cyber Dark (Ban Đêm Cá Tính) */
+[data-theme="cyberdark"] {
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-subtle: #334155;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-light: rgba(129, 140, 248, 0.18);
+  --accent: #2dd4bf;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= 3. ĐIỀU CHỈNH THEO NHÓM ĐỘ TUỔI ================= */
+/* 3.1 Nhóm MẦM NON (3 - 6 tuổi) */
+[data-stage="mam-non"] {
+  --radius-card: 28px;
+  --radius-btn: 22px;
+  --btn-height: 62px;
+  --icon-size: 2.6rem;
+}
+[data-stage="mam-non"] .task-card {
+  padding: 18px 20px;
+  border-width: 2.5px;
+}
+[data-stage="mam-non"] .btn-action-done {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  animation: pulse-soft 2.5s infinite;
+}
+
+/* 3.2 Nhóm TIỂU HỌC (7 - 10 tuổi) */
+[data-stage="tieu-hoc"] {
+  --radius-card: 20px;
+  --radius-btn: 16px;
+  --btn-height: 52px;
+  --icon-size: 2.2rem;
+}
+[data-stage="tieu-hoc"] .exp-bar-container {
+  display: block;
+}
+
+/* 3.3 Nhóm THIẾU NIÊN (11 - 15+ tuổi) */
+[data-stage="teen"] {
+  --radius-card: 14px;
+  --radius-btn: 12px;
+  --btn-height: 46px;
+  --icon-size: 1.8rem;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+[data-stage="teen"] .task-card {
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+[data-stage="teen"] .baby-only {
+  display: none !important;
+}
+
+/* ================= 4. BASE RESET & CHUNG ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Thanh Header Hồ Sơ Của Bé - HIỂN THỊ ĐẦY ĐỦ KHÔNG BỊ CẮT */
+.kid-header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.kid-identity-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.kid-avatar-frame {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.kid-name-age-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+/* Biệt danh hiển thị đầy đủ, co giãn theo kích thước màn hình */
+.kid-fullname-title {
+  font-size: clamp(1.2rem, 4.2vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.kid-meta-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+
+.badge-age {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-badge);
+}
+
+.badge-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-badge);
+}
+
+.badge-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #fff8e1;
+  color: #d97706;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-badge);
+}
+
+/* Quick Star / Points Wallet */
+.star-wallet-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  padding: 6px 14px;
+  border-radius: var(--radius-badge);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #b45309;
+  flex-shrink: 0;
+}
+
+.streak-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff1f2;
+  color: #e11d48;
+  padding: 6px 12px;
+  border-radius: var(--radius-badge);
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Hiệu ứng nhịp đập mời gọi bấm */
+@keyframes pulse-soft {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes star-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px #ffd54f); }
+  50% { filter: drop-shadow(0 0 12px #ffb300); }
+}
+
